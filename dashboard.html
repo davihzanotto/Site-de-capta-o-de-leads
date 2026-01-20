@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard • Leads</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-page="dashboard">
+  <div class="bg"></div>
+
+  <header class="topbar">
+    <div class="topbar__left">
+      <a class="btn ghost small" href="index.html">← Voltar</a>
+    </div>
+
+    <div class="topbar__center">
+      <div class="brandLine">Dashboard de leads </div>
+    </div>
+
+    <div class="topbar__right">
+      <button id="exportCsv" class="btn small" type="button">Exportar CSV</button>
+      <button id="clearAll" class="btn primary small" type="button">Limpar tudo</button>
+    </div>
+  </header>
+
+  <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="cardHead">
+        <h2>Dashboard de leads</h2>
+        <p class="muted">Separação automática por potencial.</p>
+      </div>
+
+      <div class="dashCards">
+        <article class="dashCard">
+          <div class="dashNum" id="dTotal">0</div>
+          <div class="dashLabel">TOTAL</div>
+          <div class="dashDesc">Leads cadastrados</div>
+        </article>
+
+        <article class="dashCard">
+          <div class="dashNum" id="dPot">0</div>
+          <div class="dashLabel">POTENCIAL</div>
+          <div class="dashDesc">Renda &gt; 3850 e sem pendências</div>
+        </article>
+
+        <article class="dashCard">
+          <div class="dashNum" id="dOutros">0</div>
+          <div class="dashLabel">OUTROS</div>
+          <div class="dashDesc">Acompanhar / maturar</div>
+        </article>
+
+        <article class="dashCard">
+          <div class="dashNum" id="dMedia">R$ 0</div>
+          <div class="dashLabel">RENDA MÉDIA</div>
+          <div class="dashDesc">Dos leads</div>
+        </article>
+      </div>
+
+      <div class="dashTools">
+        <label class="field" style="max-width:520px;">
+          <span>Buscar por nome/telefone</span>
+          <input id="search" placeholder="Digite para filtrar..." />
+        </label>
+      </div>
+
+      <h3 class="subTitle">Leads com potencial</h3>
+      <div class="tableWrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Lead</th>
+              <th>Telefone</th>
+              <th>Renda</th>
+              <th>Pendências</th>
+              <th>CLT/PJ</th>
+              <th>IR</th>
+              <th>Aluguel</th>
+              <th>Criado</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tbPot"></tbody>
+        </table>
+      </div>
+
+      <h3 class="subTitle">Outros leads</h3>
+      <div class="tableWrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Lead</th>
+              <th>Telefone</th>
+              <th>Renda</th>
+              <th>Pendências</th>
+              <th>CLT/PJ</th>
+              <th>IR</th>
+              <th>Aluguel</th>
+              <th>Criado</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tbOutros"></tbody>
+        </table>
+      </div>
+
+      <p class="tiny" style="margin-top:14px;">
+        Critério: <b>Potencial</b> = renda &gt; 3850 <b>e</b> pendências = “Não”.
+      </p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

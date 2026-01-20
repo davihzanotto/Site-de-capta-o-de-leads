@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Davih Zanotto • Pacaembu Construtora</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-page="index">
+  <!-- Background -->
+  <div class="bg"></div>
+
+  <!-- Topbar fixa -->
+  <header class="topbar">
+    <div class="topbar__left">
+      <a class="iconBtn" href="https://www.instagram.com/davih_zanottocorretor?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="logoinstagram.png" alt="Instagram" />
+      </a>
+
+      <a class="iconBtn" href="https://www.facebook.com/profile.php?id=61585936721767&locale=pt_BR" target="_blank" rel="noopener" aria-label="Facebook">
+        <img src="logofacebook.png" alt="Facebook" />
+      </a>
+    </div>
+
+    <div class="topbar__center">
+      <!-- SUA LOGO -->
+      
+      <div class="brandLine">Pacaembu Construtora • Atendimento especializado • Minha Casa Minha Vida</div>
+    </div>
+
+    <div class="topbar__right">
+      <button id="menuBtn" class="menuBtn" type="button" aria-label="Menu" aria-expanded="false">
+        <span class="dots">⋮</span>
+      </button>
+
+      <div id="menuDrop" class="menuDrop" role="menu" aria-hidden="true">
+        <button id="btnOwner" class="menuItem" type="button" role="menuitem">Área do proprietário</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modal senha -->
+  <div id="senhaModal" class="modal" aria-hidden="true">
+    <div class="modalBackdrop"></div>
+    <div class="modalCard" role="dialog" aria-modal="true" aria-label="Senha do proprietário">
+      <h3>Área do proprietário</h3>
+      <p class="muted">Digite a senha para acessar a dashboard.</p>
+
+      <label class="field">
+        <span>Senha</span>
+        <input id="senhaInput" type="password" placeholder="••••••••" autocomplete="current-password" />
+      </label>
+
+      <p id="senhaErro" class="error" style="display:none;">Senha incorreta.</p>
+
+      <div class="modalActions">
+        <button id="btnCancelSenha" class="btn ghost" type="button">Cancelar</button>
+        <button id="btnOkSenha" class="btn primary" type="button">Entrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast / notificação bonita -->
+  <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="kicker">ANÁLISE RÁPIDA E ATENDIMENTO DIRETO</div>
+      <h1>Seu imóvel começa aqui.</h1>
+      <p class="lead">
+        Preencha os dados para uma análise inicial e retorno com orientação clara sobre próximos passos,
+        documentação e condições.
+      </p>
+
+      <div class="heroActions">
+        <a class="btn primary" href="#form">Fazer minha análise</a>
+
+      </div>
+
+      <div class="tiny">
+        Suas informações são confidenciais e usadas apenas para análise e direcionamento do atendimento.
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section id="video" class="card">
+      <div class="cardHead">
+        <h2>Entenda como funciona</h2>
+        <p class="muted">Assista e depois preencha o formulário.</p>
+      </div>
+
+      <div class="videoBox">
+        <!-- Troque o ID do vídeo abaixo -->
+        <iframe
+          src="Pacaembu Construtora.mp4"
+          title="Vídeo"
+          frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- NOSSOS NÚMEROS (com contador animado e + à esquerda) -->
+    <section class="card">
+      <div class="cardHead">
+        <h2>Construtora Pacaembu</h2>
+        <p class="muted">Resultados reais no mercado imobiliário.</p>
+      </div>
+
+      <div class="statsGrid">
+        <article class="stat">
+          <div class="statValue">
+            <span class="plus">+</span><span class="count" data-target="30">0</span>
+          </div>
+          <div class="statTitle">ANOS DE ATUAÇÃO</div>
+          <div class="statDesc">Experiência e consistência</div>
+        </article>
+
+        <article class="stat">
+          <div class="statValue">
+            <span class="plus">+</span><span class="count" data-target="100000" data-format="ptbr">0</span>
+          </div>
+          <div class="statTitle">CASAS VENDIDAS</div>
+          <div class="statDesc">Sonhos realizados</div>
+        </article>
+
+        <article class="stat">
+          <div class="statValue">
+            <span class="plus">+</span><span class="count" data-target="200">0</span>
+          </div>
+          <div class="statTitle">BAIRROS PLANEJADOS</div>
+          <div class="statDesc">Grandes projetos</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section id="form" class="card">
+      <div class="cardHead">
+        <h2>Formulário de análise</h2>
+        <p class="muted">Leva menos de 1 minuto.</p>
+      </div>
+
+      <form id="leadForm" class="formGrid" autocomplete="off">
+        <label class="field">
+          <span>Nome</span>
+          <input name="nome" required placeholder="Ex: Maria Silva" />
+        </label>
+
+        <label class="field">
+          <span>Telefone / WhatsApp</span>
+          <input name="telefone" required placeholder="Ex: (34) 9xxxx-xxxx" />
+        </label>
+
+        <label class="field">
+          <span>Renda bruta (R$)</span>
+          <input name="renda" required inputmode="decimal" placeholder="Ex: 3500" />
+          <small>Você pode digitar com ponto ou vírgula. Ex: 3.500,50</small>
+        </label>
+
+        <label class="field">
+          <span>Possui pendências?</span>
+          <select name="pendencias" required>
+            <option value="" selected>Selecione...</option>
+            <option>Não</option>
+            <option>Sim</option>
+            <option>Não sei</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Tem filhos?</span>
+          <select name="filhos" required>
+            <option value="" selected>Selecione...</option>
+            <option>Não</option>
+            <option>Sim</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Você é CLT ou PJ?</span>
+          <select name="cltpj" id="cltpj" required>
+            <option value="" selected>Selecione...</option>
+            <option>CLT</option>
+            <option>PJ</option>
+            <option>Autônomo</option>
+            <option>Desempregado</option>
+          </select>
+        </label>
+
+        <!-- aparece só se CLT -->
+        <label class="field" id="cltExtra" style="display:none;">
+          <span>Tem mais de 3 anos de carteira assinada?</span>
+          <select name="clt3anos" id="clt3anos">
+            <option value="" selected>Selecione...</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Declara imposto de renda?</span>
+          <select name="ir" required>
+            <option value="" selected>Selecione...</option>
+            <option>Sim</option>
+            <option>Não</option>
+            <option>Não sei</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Paga aluguel atualmente?</span>
+          <select name="aluguel" required>
+            <option value="" selected>Selecione...</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </label>
+
+        <label class="field full">
+          <span>Observações (opcional)</span>
+          <textarea name="obs" rows="3" placeholder="Escreva algo que ajude na análise..."></textarea>
+        </label>
+
+        <div class="full formActions">
+          <button class="btn primary" type="submit">Enviar análise</button>
+          <button class="btn ghost" type="reset">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <span>© Davih Zanotto • Pacaembu Construtora</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
